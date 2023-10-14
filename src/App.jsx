@@ -37,9 +37,20 @@ function App() {
       });
     }
   };
+  const resetState = () => {
+    setSelectedImage(null);
+    setColorPalette([]);
+    setIsLoading(false);
+  };
+  const copyToClipboard = (hexCode) => {
+    navigator.clipboard.writeText(hexCode).then(() => {
+      console.log(`Copied to clipboard: ${hexCode}`);
+    });
+  };
 
   return (
     <>
+      <h1 className="text-5xl pb-4">Color Palette Generator</h1>
       <div className="grid grid-rows-2 gap-4">
         <div className="flex flex-row justify-around">
           <div className="flex items-center justify-center h-[300px] w-[300px] p-4 border-4">
@@ -71,14 +82,14 @@ function App() {
               )}
             </div>
           </div>
-          <div className="grid grid-cols-5 gap-4">
+          <div className="grid grid-cols-6 gap-4">
             {colorPalette.map((color, index) => (
               <div
                 key={index}
-                className="flex items-end h-64 w-20 p-4 border-4"
+                className="flex items-end h-64 w-30 p-4 border-4"
                 style={{ backgroundColor: color }}
               >
-                <p>{color}</p>
+                <p onDoubleClick={() => copyToClipboard(color)}>{color}</p>
               </div>
             ))}
           </div>
@@ -92,14 +103,13 @@ function App() {
               Generate
             </button>
           </div>
+          <div></div>
           <div>
-            <button className="w-[100px] h-[50px] bg-mb border-4 border-black">
-              d
-            </button>
-          </div>
-          <div>
-            <button className="w-[100px] h-[50px] bg-mr border-4 border-black">
-              r
+            <button
+              className="w-[100px] h-[50px] bg-mr border-4 border-black"
+              onClick={resetState}
+            >
+              refresh
             </button>
           </div>
         </div>
