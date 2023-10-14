@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  font-family: "Minecraft", sans;
+  @apply font-mf;
 }
 
 .logo {
@@ -17,14 +17,6 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@font-face {
-  font-family: "Minecraft"; /* Name your font */
-  src: url("./fonts/Minecraft.ttf") format("ttf");
-  /* Include additional file formats if necessary (e.g., .ttf, .otf) */
-  font-weight: normal;
-  font-style: normal;
 }
 
 @keyframes logo-spin {

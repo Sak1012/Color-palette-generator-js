@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <h1 className="text-5xl pb-4">Color Palette Generator</h1>
+      <h1 className="text-5xl pb-4 font-mf">Color Palette Generator</h1>
       <div className="grid grid-rows-2 gap-4">
         <div className="flex flex-row justify-around">
           <div className="flex items-center justify-center h-[300px] w-[300px] p-4 border-4">
