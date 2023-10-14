@@ -67,8 +67,11 @@ function App() {
                 </>
               ) : (
                 <>
-                  <label htmlFor="imageInput" className="cursor-pointer">
-                    Add Image
+                  <label
+                    htmlFor="imageInput"
+                    className="text-2xl cursor-pointer"
+                  >
+                    + Add Image
                   </label>
                   <input
                     id="imageInput"
@@ -97,7 +100,7 @@ function App() {
         <div className="grid grid-cols-3 gap-1">
           <div>
             <button
-              className="w-[200px] h-[50px] bg-mg border-4 border-black"
+              className="w-[200px] h-[50px] text-2xl bg-mg border-4 border-black"
               onClick={generateColorPalette}
             >
               Generate
@@ -106,7 +109,7 @@ function App() {
           <div></div>
           <div>
             <button
-              className="w-[100px] h-[50px] bg-mr border-4 border-black"
+              className="w-[100px] h-[50px] text-xl bg-mr border-4 border-black"
               onClick={resetState}
             >
               refresh
